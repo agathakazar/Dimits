@@ -45,7 +45,7 @@ class Dimits():
             logger(err= f'{arch} Detected', verbose=verbose)
             return 
 
-        home =  Path.home()
+        home =  Path.home() if Path.home().exists() else Path.cwd()
         
         self.voice = voice
         self.folder = 'piper'
